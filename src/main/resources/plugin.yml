@@ -1,0 +1,13 @@
+name: EplPlugin
+version: '${project.version}'
+description: Some improvement for the EPL Server
+main: megaaa.ovh.eplplugin.EplPlugin
+api-version: "1.20"
+prefix: EPL
+author: Megaaa_
+commands:
+  coords:
+    description: Send coordinates in the chat
+    aliases: [ c, coo ]
+
+

@@ -30,12 +30,12 @@ public class EventListener implements Listener {
             "%s ne manquera à personne :)",
             "Enfin %s lâche son écran !"
             };
-    int[] colors = {0xFF5555, 0xFFAA00, 0xFFFF55, 0x00AA00, 0x55FF55, 0x55FFFF, 0x00AAAA, 0x5555FF, 0xFF55FF, 0xAA00AA, 0xFFFFFF};
+    //int[] colors = {0xFF5555, 0xFFAA00, 0xFFFF55, 0x00AA00, 0x55FF55, 0x55FFFF, 0x00AAAA, 0x5555FF, 0xFF55FF, 0xAA00AA, 0xFFFFFF};
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         TextComponent message = Component.text(String.format(joinMessages[new Random().nextInt(joinMessages.length)], event.getPlayer().getName())).color(TextColor.color(0xFFFF55));
-        TextColor color = TextColor.color(colors[new Random().nextInt(colors.length)]);
+        TextColor color = TextColor.color(new Random().nextInt(256), new Random().nextInt(256), new Random().nextInt(256));
         event.getPlayer().playerListName(event.getPlayer().playerListName().color(color));
         event.getPlayer().displayName(event.getPlayer().playerListName().color(color));
         event.getPlayer().sendPlayerListHeader(Component.text("Serveur de l'EPL").color(TextColor.color(0x1CA1FF)).decorate(TextDecoration.BOLD));

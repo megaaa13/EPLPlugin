@@ -21,7 +21,9 @@ public class EventListener implements Listener {
             "Hey %s ! Content de te voir !",
             "Salut %s !",
             "Wesh %s !",
-            "Oh, c'est encore %s..."};
+            "Oh, c'est encore %s...",
+            "Bah dis donc %s, tu bosses bien ?",
+            "Les gars, les gars, %s est là !! Tu vois, tout le monde s'en fiche."};
 
     String[] quitMessages = {"Au plaisir %s !",
             "Devinez qui part sans dire au revoir ? C'est %s !",

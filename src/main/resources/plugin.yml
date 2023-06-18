@@ -12,6 +12,9 @@ commands:
   afk:
     description: Put the afk tag to itself
     usage: "Usage : /afk <on|off>"
+  morts:
+    description: Displays deaths
+    usage: "Usage : /morts <on|off>"
 
 
 

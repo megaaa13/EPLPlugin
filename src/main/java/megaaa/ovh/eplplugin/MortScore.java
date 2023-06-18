@@ -20,13 +20,12 @@ public class MortScore implements CommandExecutor {
             ScoreboardManager manager = Bukkit.getScoreboardManager();
             if (args[0].equals("on")) {
                 Scoreboard board = manager.getMainScoreboard();
-                player.setScoreboard(board);
                 final Objective objective = board.getObjective("Morts");
                 objective.setDisplaySlot(DisplaySlot.SIDEBAR);
                 objective.setDisplayName(ChatColor.RED + "Morts");
-            } else if (args[0].equals("off")) {
-                Scoreboard board = manager.getNewScoreboard();
                 player.setScoreboard(board);
+            } else if (args[0].equals("off")) {
+                player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
             }
             return true;
         }

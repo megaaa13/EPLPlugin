@@ -1,13 +1,13 @@
 package megaaa.ovh.eplplugin;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class MortScore implements CommandExecutor {
     @Override
@@ -17,13 +17,8 @@ public class MortScore implements CommandExecutor {
                 return false;
             }
             Player player = (Player) sender;
-            ScoreboardManager manager = Bukkit.getScoreboardManager();
             if (args[0].equals("on")) {
-                Scoreboard board = manager.getMainScoreboard();
-                final Objective objective = board.getObjective("Morts");
-                objective.setDisplaySlot(DisplaySlot.SIDEBAR);
-                objective.setDisplayName(ChatColor.RED + "Morts");
-                player.setScoreboard(board);
+                Objects.requireNonNull(player.getScoreboard().getObjective("Morts")).setDisplaySlot(DisplaySlot.SIDEBAR);
             } else if (args[0].equals("off")) {
                 player.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
             }

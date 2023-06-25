@@ -18,8 +18,10 @@ public final class EplPlugin extends JavaPlugin {
         Objects.requireNonNull(this.getCommand("morts")).setExecutor(new MortScore());
         this.getServer().getPluginManager().registerEvents(new EventListener(), this);
         this.getServer().getPluginManager().registerEvents(new AntiLag(), this);
+        this.getServer().getPluginManager().registerEvents(new AfkManager(), this);
 
         MobMerger.addMergerRecipe();
+        AfkManager.startAFKChecker();
 
         Bukkit.getConsoleSender().sendMessage("Plugin enabled");
     }

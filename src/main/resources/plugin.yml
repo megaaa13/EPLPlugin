@@ -11,7 +11,7 @@ commands:
     aliases: [ c, coo ]
   afk:
     description: Put the afk tag to itself
-    usage: "Usage : /afk <on|off>"
+    usage: "Usage : /afk"
   morts:
     description: Displays deaths
     usage: "Usage : /morts <on|off>"
